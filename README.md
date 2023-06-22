@@ -1,0 +1,1 @@
+This project is a twitter clone. It has the main functionality, without the fluff. The project uses Firebase for authentication and database.

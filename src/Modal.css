@@ -1,0 +1,54 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #c5f6ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: 4rem;
+  }
+  textarea {
+    font-size: 1.5rem;
+    padding: 10px;
+    font-family: inherit;
+    width: 90%;
+  }
+  .showEmoji {
+    display: block;
+  }
+  .hideEmoji {
+    display: none;
+  }
+  .post {
+    float: right;
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: inherit;
+  }
+  .chirpIcons button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  .chirpIcons button label {
+    cursor: pointer;
+  }
+  .image-input {
+    display: none;
+    cursor: pointer;
+  }
+  .selected-image {
+    max-width: 100px;
+  }

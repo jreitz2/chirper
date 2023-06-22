@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Indie Flower', cursive;
+}
+header img{
+  width: 64px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: aliceblue;
+}
+header button {
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: salmon;
+  border: none;
+  box-shadow: 2px 2px 2px;
+  cursor: pointer;
+}
+header button:active {
+  box-shadow: none;
+}
+main {
+  display: flex;
+  min-height: 100vh;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  background-color: white;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+nav a:active, nav a:hover {
+  font-weight: bold;
+}
+aside {
+  background-color: rgb(201, 230, 241);
+  margin: 10px;
+  border-radius: 5px;
+  width: 40%;
+  min-width: 300px;
+  height: fit-content;
+}
+aside img {
+  width: 100px;
+  position: relative;
+  top: -50px;
+  left: 10px;
+  border-radius: 50%;
+}
+.account-bg {
+  min-height: 100px;
+  background-color: rgb(74, 116, 136);
+  border-radius: 5px;
+}
+.account-info {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: -50px;
+  gap: 1rem;
+}
+.avatar {
+  display: flex;
+  font-size: 1.5rem;
+  line-height: 1;
+  gap: 1rem;
+  margin-top: 5px;
+}
+.account-label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.account-number {
+  font-size: 1.2rem;
+}
+.feed {
+  background-color: blanchedalmond;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 50vh;
+}
+.feed p {
+  text-indent: 20%;
+}
+.feed li {
+  list-style: none;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+.follow-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.author {
+  font-weight: bold;
+}
+.chirp-text {
+  text-indent: 20px;
+}
+.chirp-header {
+  display: flex;
+  gap: 1rem;
+}
+.chirp-header img {
+  width: 50px;
+}
+.chirp-icons {
+  display: flex;
+}
+.chirp-icons img {
+  width: 25px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.feed img {
+  max-width: 500px;
+}
+footer img {
+  width: 64px;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+  .feed img {
+    max-width: 300px;
+  }
+  aside {
+    width: 100%;
+  }
+}
