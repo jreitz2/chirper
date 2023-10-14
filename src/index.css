@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
-header img{
+header img {
   width: 64px;
 }
 header {
@@ -28,6 +28,10 @@ header button {
 header button:active {
   box-shadow: none;
 }
+.login {
+  display: flex;
+  gap: 1rem;
+}
 main {
   display: flex;
   min-height: 100vh;
@@ -47,7 +51,8 @@ nav a {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-nav a:active, nav a:hover {
+nav a:active,
+nav a:hover {
   font-weight: bold;
 }
 aside {
