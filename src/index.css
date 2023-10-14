@@ -116,6 +116,9 @@ aside img {
   align-items: center;
   gap: 2rem;
 }
+.follow-list img {
+  width: 96px;
+}
 .author {
   font-weight: bold;
 }

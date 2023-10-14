@@ -7,7 +7,6 @@ import {
   updateDoc,
   doc,
   getDoc,
-  arrayUnion,
 } from "firebase/firestore";
 import Modal from "./Modal.js";
 import "../Modal.css";

@@ -36,7 +36,7 @@ const AccountInfo = ({ db, user, isLoggedIn, isAnon }) => {
     return () => {
       accountSubscription();
     };
-  }, [user, isLoading]);
+  }, [user, isLoading, db]);
 
   return (
     <aside>
