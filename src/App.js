@@ -8,6 +8,7 @@ import NewChirp from "./Components/NewChirp";
 import Followers from "./Components/Followers";
 import Following from "./Components/Following";
 import Navbar from "./Components/Navbar";
+import SuggestedUsers from "./Components/SuggestedUsers";
 import { useState, useEffect } from "react";
 import {
   arrayUnion,
@@ -84,12 +85,15 @@ function App() {
         setIsAnon={setIsAnon}
       />
       <main>
-        <AccountInfo
-          db={db}
-          user={user}
-          isLoggedIn={isLoggedIn}
-          isAnon={isAnon}
-        />
+        <div>
+          <AccountInfo
+            db={db}
+            user={user}
+            isLoggedIn={isLoggedIn}
+            isAnon={isAnon}
+          />
+          <SuggestedUsers db={db} />
+        </div>
         <div className="feed">
           <Navbar></Navbar>
           <Routes>

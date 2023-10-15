@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  box-sizing: border-box;
   font-family: "Indie Flower", cursive;
 }
 header img {
@@ -39,7 +42,6 @@ main {
 nav {
   display: flex;
   justify-content: space-around;
-  padding-top: 10px;
   background-color: white;
 }
 nav a {
@@ -69,6 +71,25 @@ aside img {
   top: -50px;
   left: 10px;
   border-radius: 50%;
+}
+.suggested-users .account-bg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px;
+  min-height: 50px;
+}
+.suggested-user-item img {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+.suggested-user-item {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+  padding: 5px;
 }
 .account-bg {
   min-height: 100px;
@@ -155,10 +176,16 @@ footer img {
   main {
     flex-direction: column;
   }
+  .feed {
+    margin: 0;
+    margin-top: 5px;
+  }
   .feed img {
     max-width: 300px;
   }
   aside {
     width: 100%;
+    margin: 0;
+    margin-top: 5px;
   }
 }

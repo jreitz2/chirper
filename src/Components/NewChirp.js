@@ -159,9 +159,11 @@ const NewChirp = ({ isLoggedIn, user, db, storage, isAnon }) => {
       </Modal>
 
       <footer>
-        <button onClick={openModal}>
-          {isLoggedIn && <img src={quill} alt="create new chirp" />}
-        </button>
+        {isLoggedIn && (
+          <button onClick={openModal}>
+            <img src={quill} alt="create new chirp" />
+          </button>
+        )}
       </footer>
     </>
   );

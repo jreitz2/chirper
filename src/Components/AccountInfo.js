@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import avatar from "../assets/avatar.png";
 
 const AccountInfo = ({ db, user, isLoggedIn, isAnon }) => {
@@ -21,21 +21,18 @@ const AccountInfo = ({ db, user, isLoggedIn, isAnon }) => {
             setChirps(newUser.chirpCount);
             setIsLoading(false);
           }
+          if (isAnon) {
+            setFollowers(0);
+            setFollowing(0);
+            setChirps(0);
+            setIsLoading(false);
+          }
         } catch (error) {
           console.log(error);
         }
       }
     };
-
-    const accountSubscription = onSnapshot(collection(db, "users"), () => {
-      getAccountInfo();
-    });
-
     getAccountInfo();
-
-    return () => {
-      accountSubscription();
-    };
   }, [user, isLoading, db]);
 
   return (
