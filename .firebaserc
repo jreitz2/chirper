@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "chirper-7b053"
-  }
+    "default": "chirper-7b053",
+    "chirper": "chirper-7b053"
+  },
+  "targets": {},
+  "etags": {}
 }

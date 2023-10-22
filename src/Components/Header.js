@@ -47,6 +47,7 @@ const Header = ({
 
   const signOutGoogle = () => {
     signOut(auth).then(console.log("Signed out"));
+    setSelectedUserFeed(null);
     setIsLoggedIn(false);
   };
 
@@ -64,14 +65,14 @@ const Header = ({
     }
   }, []);
 
-  const handleResetSelectedUser = () => {
-    setSelectedUserFeed(null);
-  };
-
   return (
     <header>
       <Link to="/">
-        <img src={logo} alt="bird logo" onClick={handleResetSelectedUser} />
+        <img
+          src={logo}
+          alt="bird logo"
+          onClick={() => setSelectedUserFeed(null)}
+        />
       </Link>
       {!isLoggedIn && (
         <div className="login">
