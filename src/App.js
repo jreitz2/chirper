@@ -22,6 +22,7 @@ import { getStorage } from "firebase/storage";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAnon, setIsAnon] = useState(false);
+  const [selectedUserFeed, setSelectedUserFeed] = useState(null);
 
   const firebaseConfig = {
     apiKey: "AIzaSyC-4DhPzWbvAQeoCjHQ0ZIf0jkv4FV9Tig",
@@ -83,6 +84,7 @@ function App() {
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setIsAnon={setIsAnon}
+        setSelectedUserFeed={setSelectedUserFeed}
       />
       <main>
         <div>
@@ -92,10 +94,10 @@ function App() {
             isLoggedIn={isLoggedIn}
             isAnon={isAnon}
           />
-          <SuggestedUsers db={db} />
+          <SuggestedUsers db={db} setSelectedUserFeed={setSelectedUserFeed} />
         </div>
         <div className="feed">
-          <Navbar></Navbar>
+          <Navbar selectedUserFeed={selectedUserFeed}></Navbar>
           <Routes>
             <Route
               path="/"
@@ -105,6 +107,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   user={user}
                   isAnon={isAnon}
+                  selectedUserFeed={selectedUserFeed}
                 />
               }
             ></Route>
@@ -116,6 +119,7 @@ function App() {
                   user={user}
                   isLoggedIn={isLoggedIn}
                   isAnon={isAnon}
+                  setSelectedUserFeed={setSelectedUserFeed}
                 />
               }
             ></Route>
@@ -127,6 +131,7 @@ function App() {
                   user={user}
                   isLoggedIn={isLoggedIn}
                   isAnon={isAnon}
+                  setSelectedUserFeed={setSelectedUserFeed}
                 />
               }
             ></Route>

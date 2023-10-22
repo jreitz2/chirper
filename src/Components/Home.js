@@ -4,15 +4,26 @@ import {
   query,
   limit,
   onSnapshot,
+  where,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import HeartButton from "./HeartButton.js";
 import FollowButton from "./FollowButton.js";
 
-const Home = ({ db, user, isLoggedIn, isAnon }) => {
+const Home = ({ db, user, isLoggedIn, isAnon, selectedUserFeed }) => {
   const [feed, setFeed] = useState([]);
   const colRef = collection(db, "chirps");
-  const colQuery = query(colRef, orderBy("createdAt", "desc"), limit(20));
+  let colQuery;
+  if (selectedUserFeed === null) {
+    colQuery = query(colRef, orderBy("createdAt", "desc"), limit(20));
+  } else {
+    colQuery = query(
+      colRef,
+      where("authorId", "==", selectedUserFeed.uid),
+      orderBy("createdAt", "desc"),
+      limit(20)
+    );
+  }
 
   useEffect(() => {
     const unsub = onSnapshot(colQuery, (querySnapshot) => {
@@ -25,7 +36,7 @@ const Home = ({ db, user, isLoggedIn, isAnon }) => {
     return () => {
       unsub();
     };
-  }, []);
+  }, [colQuery]);
 
   const chirps = feed.map((chirp) => {
     return (
@@ -47,7 +58,9 @@ const Home = ({ db, user, isLoggedIn, isAnon }) => {
             user={user}
             isLoggedIn={isLoggedIn}
           />
-          <FollowButton chirp={chirp} db={db} user={user} isAnon={isAnon} />
+          {chirp.author !== "Anonymous" && (
+            <FollowButton chirp={chirp} db={db} user={user} isAnon={isAnon} />
+          )}
         </div>
       </li>
     );

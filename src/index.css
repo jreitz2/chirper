@@ -39,14 +39,16 @@ main {
   display: flex;
   min-height: 100vh;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 nav {
   display: flex;
   justify-content: space-around;
   background-color: white;
 }
 nav a {
-  text-decoration: none;
-  color: inherit;
   width: 100%;
   padding-left: 10px;
   padding-top: 10px;
@@ -90,6 +92,7 @@ aside img {
   font-size: 1.2rem;
   align-items: center;
   padding: 5px;
+  cursor: pointer;
 }
 .account-bg {
   min-height: 100px;
@@ -136,6 +139,7 @@ aside img {
   display: flex;
   align-items: center;
   gap: 2rem;
+  cursor: pointer;
 }
 .follow-list img {
   width: 96px;

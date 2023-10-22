@@ -9,7 +9,13 @@ import {
 } from "firebase/auth";
 import { useEffect } from "react";
 
-const Header = ({ auth, isLoggedIn, setIsLoggedIn, setIsAnon }) => {
+const Header = ({
+  auth,
+  isLoggedIn,
+  setIsLoggedIn,
+  setIsAnon,
+  setSelectedUserFeed,
+}) => {
   const signInGoogle = async () => {
     const provider = await new GoogleAuthProvider();
     provider.setCustomParameters({ prompt: "select_account" });
@@ -58,10 +64,14 @@ const Header = ({ auth, isLoggedIn, setIsLoggedIn, setIsAnon }) => {
     }
   }, []);
 
+  const handleResetSelectedUser = () => {
+    setSelectedUserFeed(null);
+  };
+
   return (
     <header>
       <Link to="/">
-        <img src={logo} alt="bird logo" />
+        <img src={logo} alt="bird logo" onClick={handleResetSelectedUser} />
       </Link>
       {!isLoggedIn && (
         <div className="login">
