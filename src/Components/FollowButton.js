@@ -16,14 +16,14 @@ const FollowButton = ({ chirp, db, user, isAnon }) => {
       const followedUserSnap = await getDoc(followedUserRef);
       const newFollowedUser = await followedUserSnap.data();
 
-      if (newUser.following === []) {
+      if (newUser.following.length === 0) {
         await updateDoc(userRef, {
           following: [
             { id: newFollow, name: newFollowName, photo: newFollowPhoto },
           ],
           followingIds: [newFollow],
         });
-        if (newFollowedUser.followedBy === []) {
+        if (newFollowedUser.followedBy.length === 0) {
           await updateDoc(followedUserRef, {
             followedBy: [
               { id: user.uid, name: newUser.name, photo: newUser.photo },
@@ -45,7 +45,7 @@ const FollowButton = ({ chirp, db, user, isAnon }) => {
           ],
           followingIds: [...newUser.followingIds, newFollow],
         });
-        if (newFollowedUser.followedBy === []) {
+        if (newFollowedUser.followedBy.length === 0) {
           await updateDoc(followedUserRef, {
             followedBy: [
               { id: user.uid, name: newUser.name, photo: newUser.photo },
